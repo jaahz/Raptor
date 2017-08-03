@@ -1,0 +1,53 @@
+body{
+	background-color: black;
+}
+
+#display{
+	padding: 250px 500px 0px 500px;
+	font-size: 85px;
+	text-align:center;
+	font-family:"LCDBOLD";
+	color: #3dbbf8;
+}
+
+#meridian{
+	position: absolute;
+	top: 225px;
+	left: 793px;
+	font-size: 28px;
+	font-family:"LCDBOLD";
+	font-style: "normal";
+	color: #3dbbf8;
+}
+
+#dateToday{
+	position: absolute;
+	top: 225px;
+	left: 552px;
+	font-size: 28px;
+	font-family:"LCDBOLD";
+	font-style: "normal";
+	color: #3dbbf8;
+}
+
+
+@font-face {
+	font-family: 'LCDBOLD';
+	src: url('./LCDBOLD.eot');
+	src: local('LCDBOLD'), url('./LCDBOLD.woff') format('woff'), url('./LCDBOLD.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_523">Text with this font applied</p> */
+.fontsforweb_fontid_523 {
+	font-family: 'LCDBOLD' !important;
+}
+
+.myIcon{
+	font-family: FontAwesome;
+	color: #00ff00;
+    font-size: 60px!important;
+    position: absolute;
+    top: 365px;
+    left: 642px;
+    cursor: pointer;
+}
+

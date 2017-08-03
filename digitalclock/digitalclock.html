@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+
+	<link rel="stylesheet" type="text/css" href="digiStyles.css">
+
+	 <link rel="stylesheet" href="project/font-awesome/css/font-awesome.min.css"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+       <script>
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var ampm = today.getHours() >= 12 ? 'PM' : 'AM';
+    var meridiem = ampm;
+    
+    var dd= today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear(); 
+
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('display').innerHTML =
+    h + ":" + m + ":" + s;
+
+    document.getElementById('meridian').innerHTML = meridiem;
+
+    var formatDate = dd + "/" + mm + "/" + yyyy;
+    document.getElementById('dateToday').innerHTML = formatDate;
+
+    var t = setTimeout(startTime, 500);
+
+    if (h > 12) {
+      h = h - 12;
+      meridiem = "PM";
+    }
+
+    // 0 AM and 0 PM should read as 12
+    if (h === 0) {
+     h = 12;    
+    }
+
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+</script>
+</head>
+
+<body onload="startTime();">
+   <div id="display"></div>
+   <div id = "meridian"></div>
+   <div id = "dateToday"></div>
+
+   <div id = "icon">
+     <i class="fa fa-clock-o myIcon" aria-hidden="true"></i>
+   </div>
+
+
+
+</body>
+</html>
